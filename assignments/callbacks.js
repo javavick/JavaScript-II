@@ -24,19 +24,27 @@ const items = ["Pencil", "Notebook", "yo-yo", "Gum"];
 
 */
 
+/*==================== MY GENERIC CALLBACK FUNCTION ====================*/
+
+function callback(arg) {
+  console.log(arg);
+}
+
+/*==================== PROBLEMS ====================*/
+
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
   return cb(arr.length);
 }
 
-getLength(items, (amount) => console.log(amount));
+getLength(items, callback);
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr[arr.length - 1]);
 }
 
-last(items, (last) => console.log(last));
+last(items, callback);
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
@@ -44,7 +52,7 @@ function sumNums(x, y, cb) {
   return cb(sum);
 }
 
-sumNums(32, 41, (num) => console.log(num));
+sumNums(32, 41, callback);
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
@@ -52,7 +60,7 @@ function multiplyNums(x, y, cb) {
   return cb(result);
 }
 
-multiplyNums(7, 3, (num) => console.log(num));
+multiplyNums(7, 3, callback);
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
@@ -60,7 +68,7 @@ function contains(item, list, cb) {
   return cb(list.includes(item));
 }
 
-contains("Notebook", items, (check) => console.log(check));
+contains("Notebook", items, callback);
 
 /* STRETCH PROBLEM */
 
